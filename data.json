@@ -17,50 +17,57 @@
         {
             "source": "Person 1",
             "target": "Project 1",
-            "value": 1,
-            "color": "#cccccc"
+            "value": 1
         },
         {
             "source": "Person 2",
             "target": "Project 2",
-            "value": 1,
-            "color": "#cccccc"
+            "value": 1
         },
         {
             "source": "Person 3",
             "target": "Project 3",
-            "value": 1,
-            "color": "#cccccc"
+            "value": 1
         },
         {
             "source": "Person 4",
             "target": "Project 4",
-            "value": 1,
-            "color": "#cccccc"
+            "value": 1
         },
         {
             "source": "Person 1",
             "target": "Project 4",
-            "value": 1,
-            "color": "#cccccc"
+            "value": 1
         },
         {
             "source": "Person 1",
             "target": "Project 3",
-            "value": 1,
-            "color": "#cccccc"
+            "value": 1
         },
         {
             "source": "Person 1",
             "target": "Project 2",
-            "value": 1,
-            "color": "#cccccc"
+            "value": 1
         },
         {
             "source": "Person 5",
             "target": "Project 3",
-            "value": 1,
-            "color": "#cccccc"
+            "value": 1
+        },
+        {
+            "source": "Person 3",
+            "target": "Project 5",
+            "value": 1
+        },
+        {
+            "source": "Person 4",
+            "target": "Project 6",
+            "value": 1
+        },
+        {
+            "source": "Person 2",
+            "target": "Project 7",
+            "value": 1
         }
     ]
 }
