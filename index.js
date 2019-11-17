@@ -8,6 +8,7 @@ const margin = { top: 10, right: 10, bottom: 10, left: 10 };
 const width = 700 - margin.left - margin.right;
 const height = 300 - margin.top - margin.bottom;
 const color = 'red';
+const colorMap = d3.scaleOrdinal(d3.schemeSet3);
 
 const svg = d3
     .select('#chart')
@@ -32,6 +33,7 @@ const sankey = sankeyInstance()
 
 const { nodes, links } = sankey(data);
 
+// build nodes
 svg.append('g')
     .selectAll('rect')
     .data(nodes)
@@ -40,23 +42,41 @@ svg.append('g')
     .attr('y', d => d.y0)
     .attr('height', d => d.y1 - d.y0)
     .attr('width', d => d.x1 - d.x0 - 2)
+    .attr('class', 'node')
     .attr('fill', d => {
-        //        return 'red';
         let c;
-        for (const link of d.sourceLinks) {
-            if (c === undefined) c = link.color;
-            else if (c !== link.color) c = null;
-        }
-        if (c === undefined)
-            for (const link of d.targetLinks) {
-                if (c === undefined) c = link.color;
-                else if (c !== link.color) c = null;
+        if (d.type) {
+            switch (d.type) {
+                case 'person':
+                    c = '#008fa8';
+                    break;
+                case 'project':
+                    c = '#7337d3';
+                    break;
+                default:
+                    c = 'grey';
+                    break;
             }
-        return (d3.color(c) || d3.color(color)).darker(0.5);
+        }
+
+        return d3.color(c);
+
+        // //        return 'red';
+        // for (const link of d.sourceLinks) {
+        //     if (c === undefined) c = link.color;
+        //     else if (c !== link.color) c = null;
+        // }
+        // if (c === undefined)
+        //     for (const link of d.targetLinks) {
+        //         if (c === undefined) c = link.color;
+        //         else if (c !== link.color) c = null;
+        //     }
+        // return (d3.color(c) || d3.color(color)).darker(0.5);
     })
     .append('title')
     .text(d => `${d.name}\n${d.value.toLocaleString()}`);
 
+// generate links
 const link = svg
     .append('g')
     .attr('fill', 'none')
@@ -68,6 +88,7 @@ const link = svg
 
 link.append('path')
     .attr('d', sankeyLinkHorizontal())
+    .attr('class', 'link')
     .attr('stroke-width', d => Math.max(1, d.width));
 
 link.append('title').text(
