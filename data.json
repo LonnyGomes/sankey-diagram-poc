@@ -1,0 +1,66 @@
+{
+    "nodes": [
+        { "name": "Person 1" },
+        { "name": "Person 2" },
+        { "name": "Person 3" },
+        { "name": "Person 4" },
+        { "name": "Person 5" },
+        { "name": "Project 1" },
+        { "name": "Project 2" },
+        { "name": "Project 3" },
+        { "name": "Project 4" },
+        { "name": "Project 5" },
+        { "name": "Project 6" },
+        { "name": "Project 7" }
+    ],
+    "links": [
+        {
+            "source": "Person 1",
+            "target": "Project 1",
+            "value": 1,
+            "color": "#cccccc"
+        },
+        {
+            "source": "Person 2",
+            "target": "Project 2",
+            "value": 1,
+            "color": "#cccccc"
+        },
+        {
+            "source": "Person 3",
+            "target": "Project 3",
+            "value": 1,
+            "color": "#cccccc"
+        },
+        {
+            "source": "Person 4",
+            "target": "Project 4",
+            "value": 1,
+            "color": "#cccccc"
+        },
+        {
+            "source": "Person 1",
+            "target": "Project 4",
+            "value": 1,
+            "color": "#cccccc"
+        },
+        {
+            "source": "Person 1",
+            "target": "Project 3",
+            "value": 1,
+            "color": "#cccccc"
+        },
+        {
+            "source": "Person 1",
+            "target": "Project 2",
+            "value": 1,
+            "color": "#cccccc"
+        },
+        {
+            "source": "Person 5",
+            "target": "Project 3",
+            "value": 1,
+            "color": "#cccccc"
+        }
+    ]
+}
